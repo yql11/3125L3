@@ -84,13 +84,13 @@ function restrictListProducts(prods, restriction) {
 	let product_names = [];
 	for (let i=0; i<prods.length; i+=1) {
 		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name);
+			product_names.push(prods[i].name +"$"+ products[i].price);
 		}
 		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name);
+			product_names.push(prods[i].name +"$"+ products[i].price);
 		}
 		else if ((restriction == "Meat") && (prods[i].meat == true)){
-			product_names.push(prods[i].name);
+			product_names.push(prods[i].name +"$"+ products[i].price);
 		}
 		else if (restriction == "None"){
 			product_names.push(prods[i].name +"$"+ products[i].price);
@@ -103,9 +103,7 @@ function restrictListProducts(prods, restriction) {
 function getTotalPrice(chosenProducts) {
 	totalPrice = 0;
 	for (let i=0; i<products.length; i+=1) {
-		if (chosenProducts.indexOf(products[i].name) > -1){
 			totalPrice += products[i].price;
-		}
 	}
 	return totalPrice;
 }
