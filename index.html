@@ -55,6 +55,7 @@
 
         </style>
     </head>
+
     <body>
 
     <div id="mySidenav" class="sidenav">
@@ -70,13 +71,44 @@
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Start your Experience!</span>
         <br>
         <a href="https://www.uottawa.ca/en"target="_blank"><img src="image/uOttawa_1.png"width="450" height="120" alt="https://www.uottawa.ca/en"border="0"></a>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            ul.breadcrumb {
+                padding: 10px 16px;
+                list-style: none;
+                background-color: #eee;
+            }
+            ul.breadcrumb li {
+                display: inline;
+                font-size: 18px;
+            }
+            ul.breadcrumb li+li:before {
+                padding: 8px;
+                color: black;
+                content: "/\00a0";
+            }
+            ul.breadcrumb li a {
+                color: #0275d8;
+                text-decoration: none;
+            }
+            ul.breadcrumb li a:hover {
+                color: #01447e;
+                text-decoration: underline;
+            }
+        </style>
+        </head>
+        <body>
 
+        <ul class="breadcrumb">
+            <li><a href="#" class="tablinks" onclick="openInfo(event, 'Customer')">Customer</a></li>
+            <li><a href="#" class="tablinks" onclick="openInfo(event, 'Products')">Products</a></li>
+            <li><a href="#" class="tablinks" onclick="openInfo(event, 'Cart')">Cart</a></li>
+
+
+        </ul>
+
+        </body>
         <br>
-        <div class="tab">
-            <button class="tablinks" onclick="openInfo(event, 'Customer')">Customer</button>
-            <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-            <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
-        </div>
     </body>
 
     <!-- Tab links, each one with an onclick event associated with it -->
