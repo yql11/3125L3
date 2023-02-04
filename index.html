@@ -1,59 +1,139 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <link href="styles/style.css" rel="stylesheet" type="text/css">
+        <style>
+            body {
+                font-family: "Lato", sans-serif;
+                transition: background-color .5s;
+            }
+
+            .sidenav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .sidenav a:hover {
+                color: #f1f1f1;
+            }
+
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+            #main {
+                transition: margin-left .5s;
+                padding: 16px;
+            }
+
+            @media screen and (max-height: 450px) {
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+            }
+
+        </style>
     </head>
-
     <body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" class="tablinks" onclick="openInfo(event, 'Customer')">Customer </a>
+        <a href="#" class="tablinks" onclick="openInfo(event, 'Products')">Products</a>
+        <a href="#" class="tablinks" onclick="openInfo(event, 'Cart')">Cart</a>
+    </div>
+
+    <div id="main">
         <h1>uOttawa G8 Grocery Store!</h1>
-        <h3><i>Wish you have a nice experience in <a href="https://www.uottawa.ca/en">uOttawa</a>!</i></h3>
+        <p><h3><i>Wish you have a nice experience in <a href="https://www.uottawa.ca/en">uOttawa</a>!</i></h3></p>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Start your Experience!</span>
         <br>
-            <a href="https://www.uottawa.ca/en"target="_blank"><img src="image/uOttawa_1.png"width="450" height="120" alt="https://www.uottawa.ca/en"border="0"></a>
+        <a href="https://www.uottawa.ca/en"target="_blank"><img src="image/uOttawa_1.png"width="450" height="120" alt="https://www.uottawa.ca/en"border="0"></a>
 
         <br>
-    </body>
-    <body>
-
-
-        <!-- Tab links, each one with an onclick event associated with it -->
         <div class="tab">
-          <button class="tablinks" onclick="openInfo(event, 'Customer')">Customer</button>
-          <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-          <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+            <button class="tablinks" onclick="openInfo(event, 'Customer')">Customer</button>
+            <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+            <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
         </div>
+    </body>
 
-        <!-- Tab content -->
-        <div id="Customer" class="tabcontent">
-          <h2>Customer Information</h2>
-          <p>Welcome to uOttawa G8 grocery store!</p>
-            Please choose a Category:
-            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+    <!-- Tab links, each one with an onclick event associated with it -->
+
+    <!-- Tab content -->
+    <div id="Customer" class="tabcontent">
+        <h2>Customer Information</h2>
+        <p>Welcome to uOttawa G8 grocery store!</p>
+        Please choose a Category:
+        <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
             <option value=""></option>
             <option value="Vegetarian">Vegetarian</option>
             <option value="GlutenFree">GlutenFree</option>
             <option value="Meat">Meat</option>
             <option value="None">None</option>
-            </select>
-        </div>
+        </select>
+    </div>
 
-        <div id="Products" class="tabcontent">
-          <h3>Your targeted products</h3>
-          <p>We preselected products based on your restrictions.</p>
-             Choose items to buy:
-             <div id="displayProduct"></div>
-             <button id="addCart" type="button" class="block" onclick="selectedItems()">
-                Add selected items to cart.
-            </button>
-        </div>
+    <div id="Products" class="tabcontent">
+        <h3>Your targeted products</h3>
+        <p>We preselected products based on your restrictions.</p>
+        Choose items to buy:
+        <div id="displayProduct"></div>
+        <button id="addCart" type="button" class="block" onclick="selectedItems()">
+            Add selected items to cart.
+        </button>
+    </div>
 
-        <div id="Cart" class="tabcontent">
-          <h3>Cart</h3>
-          <p>Here is your cart.</p>
-          <div id="displayCart"></div>
-        </div>
+    <div id="Cart" class="tabcontent">
+        <h3>Cart</h3>
+        <p>Here is your cart.</p>
+        <div id="displayCart"></div>
+    </div>
 
-        <script src="scripts/groceries.js"></script>
-        <script src="scripts/main.js"></script>
+    <script src="scripts/groceries.js"></script>
+    <script src="scripts/main.js"></script>
+
+
 
     </body>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+    </body>
+
+
+
 </html>
