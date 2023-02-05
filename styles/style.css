@@ -22,44 +22,44 @@ h3{
 }
 
 
-  .tab {
-      overflow: hidden;
-      background-color: #2D2D2C;
-    }
+.tab {
+  overflow: hidden;
+  background-color: #2D2D2C;
+}
 
-  .tablinks{
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 2rem;
-    color: #ffffff;
-    text-align:center
-  }
+.tablinks{
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #ffffff;
+  text-align:center
+}
 
-  
 
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-  }
-  
 
-  .tab button:hover {
-    background-color: #cb4646;
-  }
-  
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
 
-  .tab button.active {
-    background-color: #702a2a;
-  }
-  
 
-  .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    background-color: #c5c5c5;
-  }
+.tab button:hover {
+  background-color: #cb4646;
+}
+
+
+.tab button.active {
+  background-color: #702a2a;
+}
+
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  background-color: #c5c5c5;
+}
