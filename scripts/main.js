@@ -114,5 +114,5 @@ function carts(){
 
 	c.innerHTML = "You need " + a + " carts:";
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Now the Total Price is " + getTotalPrice(chosenProducts) * a));
+	c.appendChild(document.createTextNode("Now the Total Price is $ " + getTotalPrice(chosenProducts) * a));
 }
