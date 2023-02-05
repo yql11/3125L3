@@ -178,7 +178,7 @@
                 cursor: pointer;
             }
         </style>
-        </head>
+
         <div>
 
         <h1>Bills</h1>
@@ -187,8 +187,11 @@
 
             <p>Here is your cart.</p>
             <div id="displayCart"></div>
-            <p>Your cart cost:</p>
-            <input type="range" min="1" max="300" value=totalPrice>
+            <p>How many carts do you want to buy?:</p>
+            <input type="range" min="0" max="10" value=1>
+            <button id="cartNumber" type="button" class="block" onclick="carts()">
+                Countinue
+            </button>
 
 
         </div>
