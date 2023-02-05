@@ -97,6 +97,9 @@
             }
         </style>
 
+
+
+
         <body>
 
         <ul class="breadcrumb">
@@ -107,41 +110,34 @@
 
         </ul>
 
-        </body>
-        <br>
-    </div>
-    </body>
-
-    <!-- Tab links, each one with an onclick event associated with it -->
-
-    <!-- Tab content -->
-    <div id="Customer" class="tabcontent">
-        <h2>Customer Information</h2>
-        <p>Welcome to uOttawa G8 grocery store!</p>
-        Please choose a Category:
-        <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-            <option value=""></option>
-            <option value="Vegetarian">Vegetarian</option>
-            <option value="GlutenFree">GlutenFree</option>
-            <option value="Meat">Meat</option>
-            <option value="None">None</option>
-        </select>
-    </div>
-
-    <div id="Products" class="tabcontent">
-        <h2>Your targeted products</h2>
-        <p>We preselected products based on your restrictions.</p>
-        Choose items to buy:
-        <div id="displayProduct"></div>
-        <button id="addCart" type="button" class="block" onclick="selectedItems()">
-            Add selected items to cart.
-        </button>
-    </div>
-
-    <div id="Cart" class="tabcontent">
+        <!-- Tab content -->
+        <div id="Customer" class="tabcontent">
+            <h2>Customer Information</h2>
+            <p>Welcome to uOttawa G8 grocery store!</p>
+            Please choose a Category:
+            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+                <option value=""></option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="GlutenFree">GlutenFree</option>
+                <option value="Meat">Meat</option>
+                <option value="None">None</option>
+            </select>
+        </div>
 
 
-        </body>
+        <div id="Products" class="tabcontent">
+            <h2>Your targeted products</h2>
+            <p>We preselected products based on your restrictions.</p>
+            Choose items to buy:
+            <div id="displayProduct"></div>
+            <button id="addCart" type="button" class="block" onclick="selectedItems()">
+                Add selected items to cart.
+            </button>
+        </div>
+
+        <div id="Cart" class="tabcontent">
+
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             .slidecontainer {
@@ -182,25 +178,40 @@
 
         <div>
 
-        <h2>Bills</h2>
+            <h2>Bills</h2>
 
-        <div class="slidecontainer">
+            <div class="slidecontainer">
 
-            <p>Here is your cart.</p>
-            <div id="displayCart"></div>
-            <p>How many carts would you like to buy? </p>
-            <p>0_______________20</p>
-            <input type="range" id="myRange" min="0" max="20" value=1>
-            <button id="cartNumber" type="button" class="block" onclick="carts()">
-                Calculate
-            </button>
+                <p>Here is your cart.</p>
+                <div id="displayCart"></div>
+                <p>How many carts would you like to buy? </p>
+                <p>0_______________20</p>
+                <input type="range" id="myRange" min="0" max="20" value=1>
+                <button id="cartNumber" type="button" class="block" onclick="carts()">
+                    Calculate
+                </button>
 
 
 
+
+            </div>
 
         </div>
 
-        </div>
+
+
+        <br>
+    </div>
+
+
+    </body>
+
+    <!-- Tab links, each one with an onclick event associated with it -->
+
+
+
+
+
     </div>
 
     <script src="scripts/groceries.js"></script>
