@@ -93,7 +93,26 @@ function selectedItems(){
 }
 
 function carts(){
-	var x = document.getElementById('cartNumber');
-	y = getTotalPrice(chosenProducts) * x.value;
-	y.appendChild(document.createTextNode("Now the Total Price is " + y));
+	var ele = document.getElementsByName("product");
+	var chosenProducts = [];
+	var a = document.getElementById('myRange').value;
+	var c = document.getElementById('cartNumber');
+	var para = document.createElement("P");
+	c.innerHTML = "";
+	para.innerHTML = "You selected : ";
+	para.appendChild(document.createElement("br"));
+	for (i = 0; i < ele.length; i++) {
+		if (ele[i].checked) {
+			para.appendChild(document.createTextNode(ele[i].value));
+			para.appendChild(document.createElement("br"));
+			chosenProducts.push(ele[i].value);
+		}
+	}
+
+	// add paragraph and total price
+
+
+	c.innerHTML = "You need " + a + " carts:";
+	c.appendChild(para);
+	c.appendChild(document.createTextNode("Now the Total Price is " + getTotalPrice(chosenProducts) * a));
 }
