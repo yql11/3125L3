@@ -1,6 +1,5 @@
 
-// This function is called when any of the tab is clicked
-// It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
+
 
 function openInfo(evt, tabName) {
 
@@ -73,6 +72,7 @@ function selectedItems(){
 	
 	var c = document.getElementById('displayCart');
 	c.innerHTML = "";
+
 	
 	// build list of selected item
 	var para = document.createElement("P");
@@ -88,6 +88,12 @@ function selectedItems(){
 		
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
-		
+	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+
+}
+
+function carts(){
+	var x = document.getElementById('cartNumber');
+	y = getTotalPrice(chosenProducts) * x.value;
+	y.appendChild(document.createTextNode("Now the Total Price is " + y));
 }
